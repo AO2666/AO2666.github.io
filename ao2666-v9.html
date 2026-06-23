@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Antonio Ortega — USC</title>
+<meta name="description" content="Antonio Ortega, Dean's Professor of Electrical and Computer Engineering at the University of Southern California.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --usc-red: #990000;
+  --usc-red-dark: #7a0000;
+  --text: #222222;
+  --text-light: #555555;
+  --text-muted: #888888;
+  --border: #dddddd;
+  --bg: #ffffff;
+  --bg-alt: #f8f8f8;
+  --font-sans: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-serif: 'Merriweather', Georgia, serif;
+  --max-width: 860px;
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 56px; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+a { color: var(--usc-red); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ===== NAV ===== */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: 0 24px;
+}
+.nav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 52px;
+}
+.nav-brand {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+.nav-brand:hover { text-decoration: none; color: var(--usc-red); }
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 0.82rem;
+  color: var(--text-light);
+  font-weight: 400;
+}
+.nav-links a:hover { color: var(--usc-red); text-decoration: none; }
+
+/* hamburger */
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+.hamburger span { width: 22px; height: 2px; background: var(--text); display: block; }
+
+@media (max-width: 720px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 52px;
+    left: 0; right: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    padding: 16px 24px;
+    gap: 12px;
+  }
+  .nav-links.open { display: flex; }
+  .hamburger { display: flex; }
+}
+
+/* ===== LAYOUT ===== */
+.page-wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section {
+  padding: 48px 0;
+  border-bottom: 1px solid var(--border);
+}
+section:last-of-type { border-bottom: none; }
+
+h2 {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--usc-red);
+  margin-bottom: 20px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--usc-red);
+  display: inline-block;
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 20px 0 8px;
+}
+
+p { margin-bottom: 12px; color: var(--text-light); }
+p:last-child { margin-bottom: 0; }
+
+ul, ol {
+  padding-left: 20px;
+  margin-bottom: 12px;
+}
+li { margin-bottom: 4px; color: var(--text-light); }
+li:last-child { margin-bottom: 0; }
+
+strong { color: var(--text); font-weight: 700; }
+em { font-style: italic; }
+
+/* ===== HERO ===== */
+#hero {
+  padding: 48px 0 40px;
+  border-bottom: 1px solid var(--border);
+}
+.hero-layout {
+  display: flex;
+  gap: 36px;
+  align-items: flex-start;
+}
+.hero-photo {
+  flex-shrink: 0;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--border);
+}
+.hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+.hero-text h1 {
+  font-family: var(--font-serif);
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+.hero-text .title {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  margin-bottom: 4px;
+}
+.hero-text .institution {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  margin-bottom: 14px;
+}
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+.badge {
+  font-size: 0.75rem;
+  padding: 2px 10px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  color: var(--text-light);
+  background: var(--bg-alt);
+}
+.badge.red { border-color: var(--usc-red); color: var(--usc-red); background: #fff5f5; }
+.hero-links { display: flex; flex-wrap: wrap; gap: 12px; font-size: 0.85rem; }
+.hero-links a { color: var(--usc-red); }
+
+@media (max-width: 600px) {
+  .hero-layout { flex-direction: column; align-items: center; text-align: center; }
+  .hero-badges { justify-content: center; }
+  .hero-links { justify-content: center; }
+}
+
+/* ===== STATS ROW ===== */
+.stats-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+.stat-item {
+  flex: 1;
+  min-width: 100px;
+  text-align: center;
+  padding: 14px 8px;
+  border-right: 1px solid var(--border);
+}
+.stat-item:last-child { border-right: none; }
+.stat-num {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--usc-red);
+  line-height: 1.2;
+}
+.stat-lbl {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+}
+
+/* ===== PUBLICATIONS ===== */
+.pub-tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 20px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  flex-wrap: wrap;
+}
+.pub-tab {
+  padding: 7px 14px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  background: var(--bg-alt);
+  border: none;
+  border-right: 1px solid var(--border);
+  color: var(--text-light);
+  font-family: var(--font-sans);
+}
+.pub-tab:last-child { border-right: none; }
+.pub-tab.active { background: var(--usc-red); color: #fff; font-weight: 700; }
+.pub-tab:hover:not(.active) { background: #f0f0f0; }
+
+.pub-list { display: none; }
+.pub-list.active { display: block; }
+
+.pub-item {
+  padding: 12px 0;
+  border-bottom: 1px solid #eeeeee;
+}
+.pub-item:last-child { border-bottom: none; }
+.pub-title { font-weight: 700; color: var(--text); font-size: 0.9rem; margin-bottom: 3px; }
+.pub-authors { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 3px; }
+.pub-venue { font-size: 0.8rem; color: var(--usc-red); font-style: italic; }
+.pub-note { font-size: 0.78rem; color: var(--text-muted); margin-left: 8px; }
+
+/* ===== AWARDS LIST ===== */
+.award-list { list-style: none; padding: 0; }
+.award-list li {
+  padding: 7px 0;
+  border-bottom: 1px solid #eeeeee;
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+.award-list li:last-child { border-bottom: none; }
+.award-year {
+  font-weight: 700;
+  color: var(--usc-red);
+  min-width: 44px;
+  font-size: 0.82rem;
+  flex-shrink: 0;
+}
+
+/* ===== TWO-COL ===== */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+@media (max-width: 600px) {
+  .two-col { grid-template-columns: 1fr; gap: 0; }
+  .stat-item { min-width: 80px; }
+}
+
+/* ===== CAREER TABLE ===== */
+.career-list { list-style: none; padding: 0; }
+.career-list li {
+  display: flex;
+  gap: 16px;
+  padding: 8px 0;
+  border-bottom: 1px solid #eeeeee;
+  font-size: 0.9rem;
+  align-items: baseline;
+}
+.career-list li:last-child { border-bottom: none; }
+.career-year {
+  min-width: 110px;
+  flex-shrink: 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+.career-role { color: var(--text); }
+.career-org { color: var(--text-muted); font-size: 0.82rem; }
+
+/* ===== VISITING ===== */
+.visiting-list { list-style: none; padding: 0; }
+.visiting-list li {
+  display: flex;
+  gap: 16px;
+  padding: 6px 0;
+  border-bottom: 1px solid #eeeeee;
+  font-size: 0.88rem;
+  align-items: baseline;
+}
+.visiting-list li:last-child { border-bottom: none; }
+.visiting-year { min-width: 90px; flex-shrink: 0; color: var(--text-muted); font-size: 0.8rem; }
+.visiting-place { color: var(--text-light); }
+
+/* ===== FUNDING ===== */
+.funding-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+}
+.funding-list li {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  padding: 4px 12px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  background: var(--bg-alt);
+  margin-bottom: 0;
+}
+
+/* ===== PATENTS ===== */
+.patent-list { list-style: none; padding: 0; }
+.patent-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid #eeeeee;
+  font-size: 0.88rem;
+}
+.patent-list li:last-child { border-bottom: none; }
+.patent-title { font-weight: 700; color: var(--text); margin-bottom: 2px; }
+.patent-meta { color: var(--text-muted); font-size: 0.8rem; }
+
+/* ===== CONTACT ===== */
+.contact-info { list-style: none; padding: 0; }
+.contact-info li {
+  padding: 6px 0;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  display: flex;
+  gap: 10px;
+}
+.contact-label { min-width: 70px; color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.profile-links { list-style: none; padding: 0; margin-top: 16px; }
+.profile-links li { padding: 4px 0; font-size: 0.88rem; }
+.profile-links li::before { content: "→ "; color: var(--usc-red); }
+
+/* ===== FOOTER ===== */
+footer {
+  padding: 24px 0;
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+}
+
+/* ===== BOOK ===== */
+.book-entry {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 16px 0;
+  border-bottom: 1px solid #eeeeee;
+}
+.book-entry:last-child { border-bottom: none; }
+.book-cover-img {
+  width: 80px;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+}
+.book-details .book-title { font-weight: 700; color: var(--text); font-size: 0.9rem; margin-bottom: 4px; }
+.book-details p { font-size: 0.82rem; margin-bottom: 2px; }
+
+/* ===== STUDENTS ===== */
+.student-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 32px;
+}
+.student-cols ul { list-style: disc; padding-left: 18px; }
+.student-cols li { font-size: 0.88rem; padding: 2px 0; }
+@media (max-width: 600px) {
+  .student-cols { grid-template-columns: 1fr; }
+}
+
+/* ===== ALUMNI TABLE ===== */
+.alumni-list { list-style: none; padding: 0; }
+.alumni-list li {
+  display: flex;
+  gap: 12px;
+  padding: 5px 0;
+  border-bottom: 1px solid #eeeeee;
+  font-size: 0.85rem;
+  align-items: baseline;
+}
+.alumni-list li:last-child { border-bottom: none; }
+.alumni-year { min-width: 44px; color: var(--text-muted); font-size: 0.78rem; flex-shrink: 0; }
+.alumni-name { color: var(--text); min-width: 180px; }
+.alumni-place { color: var(--text-muted); font-size: 0.8rem; }
+.alumni-name a { color: inherit; text-decoration: none; border-bottom: 1px dotted var(--text-muted); }
+.alumni-name a:hover { border-bottom-color: var(--usc-red); color: var(--usc-red); text-decoration: none; }
+.student-cols a { color: inherit; text-decoration: none; border-bottom: 1px dotted var(--text-muted); }
+.student-cols a:hover { border-bottom-color: var(--usc-red); color: var(--usc-red); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-brand">Antonio Ortega</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#awards">Awards</a></li>
+      <li><a href="#service">Service</a></li>
+      <li><a href="#lab">Lab</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu" onclick="document.getElementById('navLinks').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-layout">
+    <div class="hero-photo">
+      <img src="https://minghsiehece.usc.edu/wp-content/uploads/2022/04/Ortega-Square.jpg" alt="Antonio Ortega" loading="eager">
+    </div>
+    <div class="hero-text">
+      <h1>Antonio Ortega</h1>
+      <p class="title">Dean's Professor of Electrical and Computer Engineering</p>
+      <p class="institution"><a href="https://viterbi.usc.edu/directory/faculty/Ortega/Antonio" target="_blank">University of Southern California</a></p>
+    
+      <div class="hero-links">
+        <a href="https://scholar.google.com/citations?user=K4bCJYcAAAAJ&hl=en&authuser=1" target="_blank">Google Scholar</a>
+        &nbsp;·&nbsp;
+        <a href="https://sipi.usc.edu/~ortega/" target="_blank">STAC Lab</a>
+        &nbsp;·&nbsp;
+        <a href="https://github.com/STAC-USC" target="_blank">GitHub</a>
+        &nbsp;·&nbsp;
+        <a href="https://www.linkedin.com/in/antonio-ortega-75b0b94/" target="_blank">LinkedIn</a>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>About</h2>
+  <p>
+    <strong>Antonio Ortega</strong> Antonio Ortega received his undergraduate and doctoral degrees from the Universidad Politecnica de Madrid, Madrid, Spain, and Columbia University, New York, NY, respectively. At Columbia, he was supported by a Fulbright Scholarship. In 1994, he joined the Electrical Engineering department at the University of Southern California (USC), where he is currently a Dean's Professor and has served as Associate Chair. He is a Fellow of the IEEE and EURASIP and a member of APSIPA. He was the Editor-in-Chief of the IEEE Transactions of Signal and Information Processing over Networks and currently serves as VP of Publications for the IEEE Signal Processing Society. He has received several paper awards, including the 2016 Signal Processing Magazine award. His recent research focuses on graph signal processing, machine learning, and multimedia compression. Over 50 PhD students have completed their PhD theses under his supervision, and his work has led to over 400 publications in international conferences and journals, as well as several patents. He is the author of the book, "Introduction to Graph Signal Processing," published by Cambridge University Press in 2022.
+  </p>
+  
+
+    <div>
+      <h3>Administrative Roles</h3>
+      <ul>
+        <li>Associate Chair, Dept. of EE, USC (2004&ndash;07, 2009&ndash;12)</li>
+        <li>Director, Signal &amp; Image Processing Institute, USC (2003&ndash;06)</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>International Collaborations</h3>
+  <p>Visiting positions at 15+ institutions across Japan, Spain, France, Singapore, Switzerland, and Australia. Current collaborations include Télécom Paris, IMDEA Networks (Spain), Universidad Politécnica de Madrid (Spain), University of Osaka, Instute of Science, Tokyo, York University (Canada) and Universidad Industrial de Santander (Colombia). 50+ PhD graduates working at universities and companies worldwide.</p>
+</section>
+
+<!-- RESEARCH -->
+<section id="research">
+  <h2>Research</h2>
+  <p>Research interests span signal processing and machine learning, with a focus on graph signal processing and  applications in various domains and compression of images, video and 3D visual data.</p>
+
+  <h3>Graph Signal Processing</h3>
+  <p>Early contributions to GSP &mdash; sampling theory, filter banks, graph wavelets, graph Fourier transforms (GFTs), and graph learning. Spectral analysis for directed graphs and fast GFTs. </p>
+
+  <h3>Image &amp; Video Compression</h3>
+  <p>Rate-distortion optimization, graph-based transforms for video coding, content-adaptive transforms, image coding for machines, and UGC compression with denoised references.</p>
+
+  <h3>Machine Learning on Graphs</h3>
+  <p>Graph-based semi-supervised learning, active learning, deep neural network analysis using graph tools, non-negative kernel regression, and out-of-distribution detection.</p>
+
+  <h3>3D Point Cloud &amp; Gaussian Splatting</h3>
+  <p>Point cloud attribute compression, denoising, quality assessment, 3D Gaussian splatting data coding, volumetric video conferencing, and dynamic polygon clouds for VR/AR.</p>
+
+  <h3>Sensor Networks &amp; Remote Sensing</h3>
+  <p>Distributed data compression, graph-based wavelets for sensor webs, soil moisture downscaling, satellite image fusion, and efficient data gathering.</p>
+
+  <h3>Oilfield &amp; Industrial Applications</h3>
+  <p>Waterflood tomography, reservoir characterization, upscaling of geological models using graph wavelets, anomaly detection for sensor drift, and fault detection using GSP.</p>
+
+  <h3>Book</h3>
+  <div class="book-entry">
+    <a href="https://www.graph-signal-processing-book.org/" target="_blank">
+    <img src="./IntroGSP-Cover.jpg" alt="Introduction to Graph Signal Processing book cover featuring colorful watercolor nodes and connections. Blue, red, and orange nodes are interconnected by lines representing graphs. The title reads Introduction to Graph Signal Processing in large text, with author name Antonio Ortega below, set against a soft gradient background of blues, pinks, and yellows conveying a sense of connection and creativity." style="width: 100px; height: 150px;">
+</a>
+    <div class="book-details">
+      <div class="book-title"><a href="https://www.graph-signal-processing-book.org/" target="_blank">Introduction to Graph Signal Processing</a></div>
+      <p><strong>Author:</strong> Antonio Ortega</p>
+      <p><strong>Publisher:</strong> Cambridge University Press, 2022</p>
+      <p>Covers graph theory foundations, graph Fourier transform, sampling on graphs, graph filter banks, graph wavelets, graph learning, and applications in compression, ML, and networks.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <h2>Publications</h2>
+  <p> Full list on <a href="https://scholar.google.com/citations?user=yBMHbcgAAAAJ" target="_blank">Google Scholar</a> and <a href="https://dblp.org/pid/o/AntonioOrtega.html" target="_blank">DBLP</a>.</p>
+
+  <div class="pub-tabs" style="margin-top: 16px;">
+    <button class="pub-tab" onclick="showTab('recent', this)">Recent (2024&ndash;2026)</button>
+    <button class="pub-tab" onclick="showTab('bestpaper', this)">Best Paper Awards</button>
+    <button class="pub-tab" onclick="showTab('studentaward', this)">Student Paper Awards</button>
+  </div>
+
+ 
+  <div class="pub-list" id="tab-recent">
+    <div class="pub-item">
+      <div class="pub-title">"GS-NFS: Bandwidth-adaptive Streaming of Dynamic Gaussian Splats and Point Clouds"</div>
+      <div class="pub-authors">R. Ghosh, H. Wang, H. Hong, E. Pavez, A. Chaudhuri, W. Pang, A. Ortega</div>
+      <span class="pub-venue">arXiv:2606.05650, 2026</span>
+    </div>
+    <div class="pub-item">
+      <div class="pub-title">"FaSST: Fast Sparsifying Secondary Transform"</div>
+      <div class="pub-authors">D. Pakiyarajah, S. Fern&aacute;ndez-Mendui&ntilde;a, E. Pavez, A. Ortega, D. Mukherjee</div>
+      <span class="pub-venue">ICIP 2026</span>
+    </div>
+    <div class="pub-item">
+      <div class="pub-title">"Digraph Signal Processing via Polar Decomposition"</div>
+      <div class="pub-authors">F. Ji, A. Ortega</div>
+      <span class="pub-venue">ICASSP 2026</span>
+    </div>
+    <div class="pub-item">
+      <div class="pub-title">"Image coding for machines via feature-preserving rate-distortion optimization"</div>
+      <div class="pub-authors">S. Fern&aacute;ndez-Mendui&ntilde;a, E. Pavez, A. Ortega</div>
+      <span class="pub-venue">IEEE Trans. on Multimedia, 2026</span>
+    </div>
+    <div class="pub-item">
+      <div class="pub-title">"Region-Adaptive Learned Hierarchical Encoding for 3D Gaussian Splatting Data"</div>
+      <div class="pub-authors">S. N. Sridhara, B. Kathariya, F. Pu, P. Yin, E. Pavez, A. Ortega</div>
+      <span class="pub-venue">DCC 2026</span>
+    </div>
+    <div class="pub-item">
+      <div class="pub-title">"L2G-Net: Local to Global Spectral Graph Neural Networks via Cauchy Factorizations"</div>
+      <div class="pub-authors">S. Fern&aacute;ndez-Mendui&ntilde;a, E. Pavez, A. Ortega</div>
+      <span class="pub-venue">ICML 2026 (Spotlight)</span>
+    </div>
+    <div class="pub-item">
+      <div class="pub-title">"Rate-Distortion Optimization for Ensembles of Non-Reference Metrics"</div>
+      <div class="pub-authors">X. Xiong, S. Fern&aacute;ndez-Mendui&ntilde;a, E. Pavez, A. Ortega, N. Birkbeck, et al.</div>
+      <span class="pub-venue">arXiv:2602.15779, 2026</span>
+    </div>
+    <div class="pub-item">
+      <div class="pub-title">"Uncertainty Principle for Vertex-Time Graph Signal Processing"</div>
+      <div class="pub-authors">Y. Zhao, X. Jian, F. Ji, W. P. Tay, A. Ortega</div>
+      <span class="pub-venue">arXiv:2602.04084, 2026</span>
+    </div>
+    <div class="pub-item">
+      <div class="pub-title">"Wrapper-Aware Rate-Distortion Optimization in Feature Coding for Machines"</div>
+      <div class="pub-authors">S. Fern&aacute;ndez-Mendui&ntilde;a, H. Choi, F. Racap&eacute;, E. Pavez, A. Ortega</div>
+      <span class="pub-venue">ICASSP 2026</span>
+    </div>
+    <div class="pub-item">
+      <div class="pub-title">"Toward Bandwidth-adaptive Fully-Immersive Volumetric Video Conferencing"</div>
+      <div class="pub-authors">R. Ghosh, C. Shin, L. Zhang, M. Ye, T. Jin, et al., A. Ortega, R. Govindan</div>
+      <span class="pub-venue">ACM CoNEXT, 2025</span>
+    </div>
+    <div class="pub-item">
+      <div class="pub-title">"INT-DTT+: Low-Complexity Data-Dependent Transforms for Video Coding"</div>
+      <div class="pub-authors">S. Fern&aacute;ndez-Mendui&ntilde;a, E. Pavez, A. Ortega, T. W. Huang, T. N. Canh, G. M. Su, et al.</div>
+      <span class="pub-venue">arXiv:2511.17867, 2025</span>
+    </div>
+    <div class="pub-item">
+      <div class="pub-title">"Avoiding Quality Saturation in UGC Compression Using Denoised References"</div>
+      <div class="pub-authors">X. Xiong, S. Fern&aacute;ndez-Mendui&ntilde;a, E. Pavez, A. Ortega, N. Birkbeck, et al.</div>
+      <span class="pub-venue">arXiv:2511.16876, 2025</span>
+    </div>
+    <div class="pub-item">
+      <div class="pub-title">"Adaptive Voxelization for Transform Coding of 3D Gaussian Splatting Data"</div>
+      <div class="pub-authors">C. Wang, S. N. Sridhara, E. Pavez, A. Ortega, C. Chang</div>
+      <span class="pub-venue">IEEE ICIP 2025</span>
+    </div>
+    <div class="pub-item">
+      <div class="pub-title">"Rate-Distortion Optimization with Non-Reference Metrics for UGC Compression"</div>
+      <div class="pub-authors">S. Fern&aacute;ndez-Mendui&ntilde;a, X. Xiong, E. Pavez, A. Ortega, N. Birkbeck, et al.</div>
+      <span class="pub-venue">IEEE ICIP 2025</span>
+    </div>
+    <div class="pub-item">
+      <div class="pub-title">"Joint Optimization of Primary and Secondary Transforms Using Rate-Distortion Optimized Transform Design"</div>
+      <div class="pub-authors">D. Pakiyarajah, E. Pavez, A. Ortega, D. Mukherjee, O. Guleryuz, K.-S. Lu, et al.</div>
+      <span class="pub-venue">IEEE ICIP 2025</span>
+    </div>
+    <div class="pub-item">
+      <div class="pub-title">"Graph-Based Image Fusion: Enhancing Multi-Modal Remote Sensing Data with GCNs"</div>
+      <div class="pub-authors">J. Garcia-Cardona, K. Arias, A. Ortega, H. Arguello</div>
+      <span class="pub-venue">EUSIPCO 2025</span>
+    </div>
+    <div class="pub-item">
+      <div class="pub-title">"Transfer Learning via Lexical Relatedness: A Sarcasm and Hate Speech Case Study"</div>
+      <div class="pub-authors">A. Cabrera, L. Lei, A. Ortega</div>
+      <span class="pub-venue">arXiv:2508.16555, 2025</span>
+    </div>
+    <div class="pub-item">
+      <div class="pub-title">"Structure-Preserving Medical Image Generation from a Latent Graph Representation"</div>
+      <div class="pub-authors">K. Arias, E. Vargas, K. V. Mishra, A. Ortega, H. Arguello</div>
+      <span class="pub-venue">arXiv:2508.15920, 2025</span>
+    </div>
+    <div class="pub-item">
+      <div class="pub-title">"Graph-Based Robust Cloud Removal via Optical-SAR Image Fusion"</div>
+      <div class="pub-authors">R. Isono, S. Ono, A. Ortega</div>
+      <span class="pub-venue">IGARSS 2025</span>
+    </div>
+    <div class="pub-item">
+      <div class="pub-title">"Variable-size Symmetry-based Graph Fourier Transforms for image compression"</div>
+      <div class="pub-authors">A. Gnutti, F. Guerrini, R. Leonardi, A. Ortega</div>
+      <span class="pub-venue">IEEE Trans. CSVT, 2025</span>
+    </div>
+    <div class="pub-item">
+      <div class="pub-title">"AutoML for multiclass anomaly compensation of sensor drift"</div>
+      <div class="pub-authors">M. Schaller, M. Kruse, A. Ortega, M. Lindauer, B. Rosenhahn</div>
+      <span class="pub-venue">Measurement, 2025</span>
+    </div>
+    <div class="pub-item">
+      <div class="pub-title">"Robust Classification under Noisy Labels: A Geometry-Aware Reliability Framework for Foundation Models"</div>
+      <div class="pub-authors">E. Bozkurt, A. Ortega</div>
+      <span class="pub-venue">CAMSAP 2025</span>
+    </div>
+    <div class="pub-item">
+      <div class="pub-title">"Out-of-Distribution Detection through Soft Clustering with Non-Negative Kernel Regression"</div>
+      <div class="pub-authors">A. Gulati, X. Dong, C. Hurtado, S. Shekkizhar, S. Swayamdipta, A. Ortega</div>
+      <span class="pub-venue">EMNLP 2024</span>
+    </div>
+    <div class="pub-item">
+      <div class="pub-title">"Spectral Graph Learning With Core Eigenvectors Prior via Iterative GLASSO and Projection"</div>
+      <div class="pub-authors">S. Bagheri, T. T. Do, G. Cheung, A. Ortega</div>
+      <span class="pub-venue">IEEE Trans. Signal Processing, 2024</span>
+    </div>
+  </div>
+
+  <div class="pub-list" id="tab-bestpaper">
+    <div class="pub-item">
+      <div class="pub-title">MMSP 2024 Best Paper Award</div>
+      <div class="pub-authors">S. Fern&aacute;ndez Mendui&ntilde;a, E. Pavez, A. Ortega &mdash; "Feature-Preserving Rate-Distortion Optimization in Image Coding for Machines"</div>
+      <span class="pub-venue">MMSP 2024</span>
+    </div>
+    <div class="pub-item">
+      <div class="pub-title">ICIP 2020 Best Paper Award</div>
+      <div class="pub-authors">E. Pavez, B. Girault, A. Ortega, P. A. Chou &mdash; "Region Adaptive Graph Fourier Transform for 3D Point Clouds"</div>
+      <span class="pub-venue">ICIP 2020</span>
+    </div>
+    <div class="pub-item">
+      <div class="pub-title">IEEE SP Magazine Award 2016</div>
+      <div class="pub-authors">D. I. Shuman, S. K. Narang, P. Frossard, A. Ortega, P. Vandergheynst &mdash; "Signal Processing on Graphs"</div>
+      <span class="pub-venue">IEEE SP Magazine, 2013</span>
+    </div>
+    <div class="pub-item">
+      <div class="pub-title">Globecom 2012 Best Paper Award</div>
+      <div class="pub-authors">M. Levorato, S. K. Narang, U. Mitra, A. Ortega &mdash; "Reduced Dimension Policy Iteration for Wireless Network Control"</div>
+      <span class="pub-venue">Globecom 2012</span>
+    </div>
+    <div class="pub-item">
+      <div class="pub-title">ICIP 2011 Best Paper Award</div>
+      <div class="pub-authors">E. Martinez-Enriquez, F. Diaz-de-Maria, A. Ortega &mdash; "Video Encoder Based on Lifting Transforms on Graphs"</div>
+      <span class="pub-venue">ICIP 2011</span>
+    </div>
+    <div class="pub-item">
+      <div class="pub-title">EURASIP JASP Best Paper 2007</div>
+      <div class="pub-authors">H. Wang, N.-M. Cheung, A. Ortega &mdash; "A Framework for Adaptive Scalable Video Coding using Wyner-Ziv Techniques"</div>
+      <span class="pub-venue">EURASIP JASP, 2006</span>
+    </div>
+    <div class="pub-item">
+      <div class="pub-title">IEEE SP Magazine Award 1999</div>
+      <div class="pub-authors">A. Ortega, K. Ramchandran &mdash; "Rate-Distortion Techniques in Image and Video Compression"</div>
+      <span class="pub-venue">IEEE SP Magazine, 1998</span>
+    </div>
+    <div class="pub-item">
+      <div class="pub-title">Leonard G. Abraham IEEE ComSoc Prize Paper 1998</div>
+      <div class="pub-authors">C.-Y. Hsu, A. Ortega, A. R. Reibman &mdash; "Joint Selection of Source and Channel Rate for VBR Video Transmission"</div>
+      <span class="pub-venue">IEEE JSAC, 1997</span>
+    </div>
+  </div>
+
+  <div class="pub-list" id="tab-studentaward">
+    <div class="pub-item">
+      <div class="pub-title">ICIP 2020 Best Student Paper (1st Place)</div>
+      <div class="pub-authors">S. Shekkizhar, A. Ortega &mdash; "Efficient Graph Construction for Image Representation"</div>
+      <span class="pub-venue">ICIP 2020</span>
+    </div>
+    <div class="pub-item">
+      <div class="pub-title">ICIP 2017 Best Student Paper (1st Place)</div>
+      <div class="pub-authors">Y.-H. Chao, G. Cheung, A. Ortega &mdash; "Pre-demosaic Light Field Image Compression using Graph Lifting Transform"</div>
+      <span class="pub-venue">ICIP 2017</span>
+    </div>
+    <div class="pub-item">
+      <div class="pub-title">ICASSP 2014 Best Student Paper</div>
+      <div class="pub-authors">A. Anis, A. Gadde, A. Ortega &mdash; "Towards a Sampling Theorem for Signals on Arbitrary Graphs"</div>
+      <span class="pub-venue">ICASSP 2014</span>
+    </div>
+    <div class="pub-item">
+      <div class="pub-title">ICIP 2013 Best Student Paper</div>
+      <div class="pub-authors">W. Dai, G. Cheung, N.-M. Cheung, A. Ortega, O. Au &mdash; "Rate-distortion Optimized Merge Frame using Piecewise Constant Functions"</div>
+      <span class="pub-venue">ICIP 2013</span>
+    </div>
+    <div class="pub-item">
+      <div class="pub-title">MMSP 2007 Best Student Paper</div>
+      <div class="pub-authors">N.-M. Cheung, A. Ortega &mdash; "Flexible Video Decoding: A Distributed Source Coding Approach"</div>
+      <span class="pub-venue">MMSP 2007</span>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section id="awards">
+  <h2>Awards &amp; Honors</h2>
+  <ul class="award-list">
+    <li><span class="award-year">2023</span><span>USC Senior Research Award, USC School of Engineering</span></li>
+    <li><span class="award-year">2022</span><span>Dean's Professor, Dept. of ECE, University of Southern California</span></li>
+    <li><span class="award-year">2018</span><span>Fellow, EURASIP &mdash; for contributions to image/video compression and graph signal processing</span></li>
+    <li><span class="award-year">2014</span><span>JSPS Fellowship, Japan Society for Promotion of Science</span></li>
+    <li><span class="award-year">2010&ndash;11</span><span>IEEE SPS Distinguished Lecturer</span></li>
+    <li><span class="award-year">2007</span><span>Fellow, IEEE &mdash; for contributions to image and video communications</span></li>
+    <li><span class="award-year">2007</span><span>Cheng Tsang Man Chair Professor, Nanyang Technological University, Singapore</span></li>
+    <li><span class="award-year">2007</span><span>JSPS Fellowship, Japan Society for Promotion of Science</span></li>
+    <li><span class="award-year">2002</span><span>Okawa Foundation Research Grant</span></li>
+    <li><span class="award-year">1997</span><span>Northrop-Grumman Junior Research Award, USC School of Engineering</span></li>
+    <li><span class="award-year">1995</span><span>NSF CAREER Award &mdash; Adaptive Compression Techniques for Digital Video Communications</span></li>
+    <li><span class="award-year">1990</span><span>Fulbright Doctoral Scholarship &mdash; Columbia University</span></li>
+  </ul>
+</section>
+
+<!-- SERVICE -->
+<section id="service">
+  <h2>Editorial &amp; Professional Service</h2>
+
+  <h3>Editorial Roles</h3>
+  <ul>
+    <li><strong>Editor-in-Chief</strong>, IEEE Trans. on Signal and Information Processing over Networks (2019&ndash;2021)</li>
+    <li><strong>Inaugural Editor-in-Chief</strong>, APSIPA Transactions on Signal and Information Processing (2011&ndash;2018)</li>
+    <li><strong>Senior Area Editor</strong>, IEEE Trans. Image Processing (2015&ndash;2019)</li>
+    <li><strong>Associate Editor</strong>, IEEE Trans. Signal Processing (2014&ndash;2017)</li>
+    <li><strong>Associate Editor</strong>, IEEE Trans. Signal &amp; Info. Processing over Networks (2014&ndash;2018)</li>
+    <li><strong>Area Editor</strong>, IEEE Signal Processing Magazine (2009&ndash;2011)</li>
+    <li><strong>Associate Editor</strong>, IEEE Trans. Image Processing (2007&ndash;2010, 1996&ndash;2000)</li>
+    <li><strong>Associate Editor</strong>, IEEE Signal Processing Letters (2000&ndash;2002)</li>
+    <li><strong>Moderator</strong>, arXiv EESS.IV (2018&ndash;present)</li>
+    <li>Guest editor for special issues in Proc. IEEE, IEEE JSTSP, IEEE TMM, EURASIP JASP</li>
+  </ul>
+
+  <h3>Governance &amp; Committees</h3>
+  <ul>
+    <li><strong>VP Publications</strong>, IEEE Signal Processing Society (2024&ndash;2026)</li>
+    <li><strong>Board of Governors</strong>, IEEE SPS (2002, 2017&ndash;2019)</li>
+    <li><strong>Chair</strong>, IEEE SPS SIG on Big Data (2014&ndash;2015)</li>
+    <li><strong>Member</strong>, IEEE SPS Technical Directions Board (2014&ndash;2016)</li>
+    <li><strong>Fellow Reference Committee</strong>, IEEE SPS (2014&ndash;2016)</li>
+    <li><strong>Chair</strong>, IMDSP Technical Committee (2004&ndash;2005)</li>
+    <li><strong>Member</strong>, National Academy Roundtable on Data Science Education (2016&ndash;2019)</li>
+    <li><strong>Member</strong>, APSIPA Sadaoki Furui Prize Paper Award Committee</li>
+    <li><strong>Member</strong>, IEEE SPS Conference Board (1997&ndash;1999, 2005&ndash;2007)</li>
+  </ul>
+
+  <h3>Conference Leadership</h3>
+  <ul>
+    <li><strong>General Co-Chair</strong>, Picture Coding Symposium (PCS 2022)</li>
+    <li><strong>TPC Co-Chair</strong>, IEEE Data Science Workshop 2018</li>
+    <li><strong>TPC Co-Chair</strong>, PCS 2018, San Francisco</li>
+    <li><strong>General Chair</strong>, GlobalSIP Symposium on GSP 2013</li>
+    <li><strong>General Co-Chair</strong>, APSIPA ASC 2013, Hollywood</li>
+    <li><strong>Program Co-Chair</strong>, PCS 2013, San Jose</li>
+    <li><strong>TPC Co-Chair</strong>, Packet Video Workshop 2010</li>
+    <li><strong>TPC Co-Chair</strong>, ICIP 2008, San Diego</li>
+    <li><strong>TPC Co-Chair</strong>, ICME 2002, Lausanne</li>
+    <li><strong>TPC Co-Chair</strong>, MMSP 1998</li>
+  </ul>
+
+  <h3>Plenary &amp; Keynote Talks</h3>
+  <ul>
+     <li>2026 &mdash; Plenary, ICME, Bangkok</li>
+      <li>2026 &mdash; Keynote, GSP Workshop, Madrid</li>
+    <li>2021 &mdash; Plenary, EUSIPCO, Dublin</li>
+    <li>2017 &mdash; Plenary, CAMSAP, Cura&ccedil;ao</li>
+    <li>2016 &mdash; Keynote, GlobalSIP, Washington DC</li>
+    <li>2015 &mdash; Plenary, APSIPA, Hong Kong</li>
+    <li>2013 &mdash; Plenary, IEEE ICIP, Melbourne</li>
+    <li>2012 &mdash; Keynote, SPIE VICP, San Francisco</li>
+    <li>2007 &mdash; Keynote, PCSJ/IMPS, Japan</li>
+    <li>1999 &mdash; Keynote, ISMIP, Taipei</li>
+  </ul>
+</section>
+
+
+
+<!-- STAC LAB -->
+<section id="lab">
+  <h2>STAC Lab</h2>
+  <p>
+    Signal, Transform, and Compression Lab at USC. 
+    Website: <a href="https://sipi.usc.edu/~ortega/" target="_blank">sipi.usc.edu/~ortega/</a> &nbsp;&middot;&nbsp;
+    GitHub: <a href="https://github.com/STAC-USC" target="_blank">github.com/STAC-USC</a>
+  </p>
+
+  <h3>Research Associate</h3>
+  <div class="student-cols">
+    <ul>
+      <li><a href="https://epavez.github.io" target="_blank" rel="noopener">Dr Eduardo Pavez</a> (since 2024)</li>
+    </ul>
+  </div>
+
+  <h3>Current PhD Students</h3>
+  <div class="student-cols">
+    <ul>
+      <li><a href="https://www.linkedin.com/in/yeganeh-gharedaghi" target="_blank" rel="noopener">Yeganeh Gharedaghi</a> (since 2024)</li>
+      <li><a href="https://www.linkedin.com/in/mansoorehmontazerin" target="_blank" rel="noopener">Mansooreh Montazerin</a> (since 2023)</li>
+      <li><a href="https://sf219.github.io/" target="_blank" rel="noopener">Samuel Fern&aacute;ndez Mendui&ntilde;a</a> (since 2022)</li>
+      <li><a href="https://scholar.google.com/citations?user=MMZVd-AAAAAJ&hl=en" target="_blank" rel="noopener">Darukeesan Pakiyarajah</a> (since 2022)</li>
+      <li><a href="https://www.linkedin.com/in/xinxiong-ee/" target="_blank" rel="noopener">Xin Xiong</a> (since 2021)</li>
+      <li><a href="https://www.linkedin.com/in/ecem-bozkurt" target="_blank" rel="noopener">Ecem Bozkurt</a> (since 2021)</li>
+      <li><a href="https://scholar.google.com/citations?user=4o-diaAAAAAJ&hl=en" target="_blank" rel="noopener">Haoran Hong</a> (since 2021)</li>
+    </ul>
+  </div>
+
+  <h3>Current &amp; Former Postdocs</h3>
+  <ul>
+    <li><a href="https://ch.linkedin.com/in/seminkwak" target="_blank" rel="noopener">Dr. Semin Kwak</a> (2023&ndash;2024) &rarr; Sony, Zurich</li>
+    <li><a href="https://epavez.github.io" target="_blank" rel="noopener">Dr. Eduardo Pavez</a> (2019&ndash;2024)</li>
+    <li><a href="https://basakguler.github.io/" target="_blank" rel="noopener">Prof. Basak Guler</a> (2016&ndash;2020) &rarr; UC Riverside</li>
+    <li><a href="https://www.benjamin-girault.com/" target="_blank" rel="noopener">Prof. Benjamin Girault</a> (2016&ndash;2020) &rarr; INRIA, France</li>
+    <li><a href="https://www.linkedin.com/in/sunilknarang" target="_blank" rel="noopener">Dr. Sunil K. Narang</a> (2012&ndash;2013) &rarr; Meta</li>
+    <li>Prof. <a href="https://scholar.google.com/citations?user=SwFduL0AAAAJ&hl=en" target="_blank" rel="noopener">Kazuma Shinoda</a> (2011&ndash;2012) &rarr; Utsunomiya University</li>
+  </ul>
+
+  <h3>Selected PhD Alumni (50+ total)</h3>
+  <ul class="alumni-list">
+    <li><span class="alumni-year">2026</span><span class="alumni-name"><a href="https://www.linkedin.com/in/johanna-garcia-cardona" target="_blank" rel="noopener">Dr. Johanna Garcia Cardona</a></span><span class="alumni-place">--</span></li>
+    <li><span class="alumni-year">2026</span><span class="alumni-name"><a href="https://scholar.google.com/citations?user=NrFqxaQAAAAJ&hl=en" target="_blank" rel="noopener">Dr. Wen-Yang Lu</a></span><span class="alumni-place">--</span></li>
+    <li><span class="alumni-year">2026</span><span class="alumni-name"><a href="https://www.linkedin.com/in/shashanksridhara" target="_blank" rel="noopener">Dr. Shashank N. Sridhara</a></span><span class="alumni-place">Dolby, Atlanta</span></li>
+    <li><span class="alumni-year">2023</span><span class="alumni-name"><a href="https://www.linkedin.com/in/daspraty" target="_blank" rel="noopener">Dr. Pratyusha Das</a></span><span class="alumni-place">Amazon, Seattle</span></li>
+    <li><span class="alumni-year">2023</span><span class="alumni-name"><a href="https://www.linkedin.com/in/shekkizh" target="_blank" rel="noopener">Dr. Sarath Shekkizhar</a></span><span class="alumni-place">Salesforce, San Francisco</span></li>
+    <li><span class="alumni-year">2023</span><span class="alumni-name"><a href="https://www.linkedin.com/in/ajinkyajayawant" target="_blank" rel="noopener">Dr. Ajinkya Jayawant</a></span><span class="alumni-place">Matic Robots, Mountain View</span></li>
+    <li><span class="alumni-year">2020</span><span class="alumni-name"><a href="https://www.linkedin.com/in/keng-shih-lu-60701a91" target="_blank" rel="noopener">Dr. Keng-Shih Lu</a></span><span class="alumni-place">Google, Mountain View</span></li>
+    <li><span class="alumni-year">2019</span><span class="alumni-name"><a href="https://epavez.github.io" target="_blank" rel="noopener">Dr. Eduardo Pavez</a></span><span class="alumni-place">USC (Postdoc)</span></li>
+    <li><span class="alumni-year">2019</span><span class="alumni-name"><a href="https://www.linkedin.com/in/jiunyukao" target="_blank" rel="noopener">Dr. Jiun-Yu Kao</a></span><span class="alumni-place">Amazon, San Francisco</span></li>
+    <li><span class="alumni-year">2017</span><span class="alumni-name"><a href="https://scholar.google.com/citations?user=d97LK2YAAAAJ&hl=en" target="_blank" rel="noopener">Dr. Aamir Anis</a></span><span class="alumni-place">Google, Mountain View</span></li>
+    <li><span class="alumni-year">2017</span><span class="alumni-name"><a href="https://www.linkedin.com/in/yung-hsuan-jessie-chao-728b3565" target="_blank" rel="noopener">Dr. Yung-Hsuan Chao</a></span><span class="alumni-place">Apple, Cupertino</span></li>
+    <li><span class="alumni-year">2017</span><span class="alumni-name"><a href="https://www.linkedin.com/in/hilmi-enes-egilmez-2ab4b11a" target="_blank" rel="noopener">Dr. Hilmi Egilmez</a></span><span class="alumni-place">Apple, Cupertino</span></li>
+    <li><span class="alumni-year">2017</span><span class="alumni-name"><a href="https://www.linkedin.com/in/akshay-gadde-98220815" target="_blank" rel="noopener">Dr. Akshay Gadde</a></span><span class="alumni-place">Google, Mountain View</span></li>
+     <li><span class="alumni-year">2013</span><span class="alumni-name"><a href="https://www.linkedin.com/in/jasontokayer/" target="_blank" rel="noopener">Dr. Jason Tokayer</a></span><span class="alumni-place">Lenna, Florida</span></li>
+     <li><span class="alumni-year">2013</span><span class="alumni-name"><a href="https://www.linkedin.com/in/yenting-greg-lin-ab13824a/" target="_blank" rel="noopener">Dr. Yenting (Greg) Lin</a></span><span class="alumni-place">Google, Los Angeles, CA</span></li>
+     <li><span class="alumni-year">2013</span><span class="alumni-name"><a href="https://www.linkedin.com/in/sungwonl/" target="_blank" rel="noopener">Dr. Sungwon Lee</a></span><span class="alumni-place">Samsung Electronics, Seoul, South Korea</span></li>
+    <li><span class="alumni-year">2012</span><span class="alumni-name"><a href="https://www.linkedin.com/in/sunilknarang" target="_blank" rel="noopener">Dr. Sunil K. Narang</a></span><span class="alumni-place">Meta, Seattle</span></li>
+    <li><span class="alumni-year">2011</span><span class="alumni-name"><a href="https://www.linkedin.com/in/woo-shik-kim-56722711" target="_blank" rel="noopener">Dr. Woo-Shik Kim</a></span><span class="alumni-place">Samsung Electronics, Korea</span></li>
+    <li><span class="alumni-year">2011</span><span class="alumni-name"><a href="https://www.linkedin.com/in/hye-yeon-cheong-40b527a/" target="_blank" rel="noopener">Dr. Hye-Yeon Cheong</a></span><span class="alumni-place">Apple, Cupertino, CA</span></li>
+    <li><span class="alumni-year">2011</span><span class="alumni-name"><a href="https://www.linkedin.com/in/zihongfan" target="_blank" rel="noopener">Dr. Zihong Fan</a></span><span class="alumni-place">Video Slick, CA</span></li>
+    <li><span class="alumni-year">2010</span><span class="alumni-name"><a href="https://scholar.google.com/citations?user=DadPJIIAAAAJ&hl=en" target="_blank" rel="noopener">Dr. Godwin Shen</a></span><span class="alumni-place">NASA-JPL, Pasadena</span></li>
+    <li><span class="alumni-year">2010</span><span class="alumni-name">Dr. Kun-Han Lee</span><span class="alumni-place">iQIYU.com, Redmond, WA</span></li> 
+    <li><span class="alumni-year">2009</span><span class="alumni-name">Dr. Brent McCleary </span><span class="alumni-place">Raytheon, Chino Hills, CA</span></li>
+    <li><span class="alumni-year">2009</span><span class="alumni-name"><a href="http://piquelab.grid.wayne.edu/wordpress" target="_blank" rel="noopener">Prof. Roger Pique-Regi</a></span><span class="alumni-place">Wayne State University</span></li>
+    <li><span class="alumni-year">2009</span><span class="alumni-name">Dr. Insuk Chong</span><span class="alumni-place">Google, Mountain View, CA</span></li> 
+<li><span class="alumni-year">2008</span><span class="alumni-name">Dr. Po-lin Lai</span><span class="alumni-place">TechStream, San Jose, CA</span></li> 
+    <li><span class="alumni-year">2008</span><span class="alumni-name"><a href="https://cheungman.github.io" target="_blank" rel="noopener">Prof. Ngai-Man Cheung</a></span><span class="alumni-place">SUTD, Singapore</span></li>
+    <li><span class="alumni-year">2008</span><span class="alumni-name">Dr. Jae Hoon Kim</span><span class="alumni-place">Apple, Cupertino, CA</span></li> 
+<li><span class="alumni-year">2008</span><span class="alumni-name">Dr. Huisheng Wang</span><span class="alumni-place">Google, Mountain View, CA</span></li> 
+    <li><span class="alumni-year">2007</span><span class="alumni-name">Prof. Yoon Hak Kim</span><span class="alumni-place">Chosun University, Korea</span></li>
+    <li><span class="alumni-year">2006</span><span class="alumni-name">Dr. Alexandre G. Ciancio</span><span class="alumni-place">INPI, Brazil</span></li> 
+    <li><span class="alumni-year">2005</span><span class="alumni-name">Dr. Hyukjune Chung</span><span class="alumni-place">Samsung, South Korea</span></li> 
+    <li><span class="alumni-year">2004</span><span class="alumni-name">Dr. Hua Xie</span><span class="alumni-place">NASA-JPL, Pasadena, CA</span></li> 
+    <li><span class="alumni-year">2003</span><span class="alumni-name">Dr. Sangyong Lee </span><span class="alumni-place">LGE, Seoul, South Korea</span></li>
+    <li><span class="alumni-year">2002</span><span class="alumni-name"><a href="https://www.linkedin.com/in/baltasar-beferull-lozano-8b306918" target="_blank" rel="noopener">Prof. Baltasar Beferull-Lozano</a></span><span class="alumni-place">Simula, Oslo, Norway</span></li>
+    <li><span class="alumni-year">2002</span><span class="alumni-name"><a href="https://scholar.google.com/citations?user=dB6JENsAAAAJ&hl=en" target="_blank" rel="noopener">Prof. Wendi Pan</a></span><span class="alumni-place">University of Alabama, Huntsville</span></li>
+    <li><span class="alumni-year">2002</span><span class="alumni-name">Dr. Zhourong Miao</span><span class="alumni-place">Meta, Menlo Park, CA</span></li>
+      <li><span class="alumni-year">2001</span><span class="alumni-name"><a href="https://scholar.google.com/citations?user=qbsPwi4AAAAJ&hl=en" target="_blank" rel="noopener">Prof. Raghavendra Singh</a></span><span class="alumni-place">BITS-Pilani, Rajasthan, India</span></li>
+    <li><span class="alumni-year">1999</span><span class="alumni-name"><a href="https://kr.linkedin.com/in/wtwoo" target="_blank" rel="noopener">Prof. Woontack Woo</a></span><span class="alumni-place">KAIST, South Korea</span></li>
+          <li><span class="alumni-year">1999</span><span class="alumni-name">Prof. Krisda Lengwehasatit</span><span class="alumni-place">Srinakharinwirot University, Thailand</span></li>
+         <li><span class="alumni-year">1999</span><span class="alumni-name">Wenqing Jiang</span><span class="alumni-place">Tiktok, San Jose, CA</span></li>
+    <li><span class="alumni-year">1998</span><span class="alumni-name">Dr. Christos Chrysafis</span><span class="alumni-place">Apple, Cupertino</span></li>
+      <li><span class="alumni-year">1998</span><span class="alumni-name">Dr. Chi-Yuan Hsu</span><span class="alumni-place">Broadcom, San Jose, CA</span></li> 
+      <li><span class="alumni-year">1998</span><span class="alumni-name">Dr. Youngjun Yoo</span><span class="alumni-place">NVIDIA, Dallas, TX</span></li> 
+  
+    </ul>
+  </ul>
+</section>
+
+<!-- FUNDING -->
+<section id="funding">
+  <h2>Research Funding</h2>
+  <p>Research supported by government agencies and industry partners, including:</p>
+  <ul class="funding-list">
+    <li>NSF</li>
+    <li>DARPA</li>
+    <li>NASA</li>
+    <li>DOE</li>
+    <li>Google</li>
+    <li>YouTube</li>
+    <li>Meta</li>
+    <li>Samsung</li>
+    <li>Qualcomm</li>
+    <li>Mitsubishi Electric</li>
+    <li>Chevron</li>
+    <li>Intel</li>
+    <li>Texas Instruments</li>
+    <li>LGE</li>
+    <li>Hewlett-Packard</li>
+  </ul>
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact</h2>
+  <ul class="contact-info">
+    <li><span class="contact-label">Email</span><span>aortega at usc.edu</a></span></li>
+    <li><span class="contact-label">Office</span><span>EEB 436, USC Viterbi School of Engineering</span></li>
+    <li><span class="contact-label">Phone</span><span>+1-213-740-2320</span></li>
+    <li><span class="contact-label">Address</span><span>Dept. of ECE, University of Southern California, Los Angeles, CA 90089-2564, USA</span></li>
+  </ul>
+
+  <ul class="profile-links">
+    <li><a href="https://viterbi.usc.edu/directory/faculty/Ortega/Antonio" target="_blank">USC Faculty Profile</a></li>
+    <li><a href="https://scholar.google.com/citations?user=K4bCJYcAAAAJ&hl=en&authuser=1" target="_blank">Google Scholar</a></li>
+    <li><a href="https://sipi.usc.edu/~ortega/" target="_blank">STAC Lab Website</a></li>
+    <li><a href="https://github.com/STAC-USC" target="_blank">STAC Lab GitHub</a></li>
+    <li><a href="https://www.researchgate.net/profile/Antonio-Ortega-5" target="_blank">ResearchGate</a></li>
+    <li><a href="https://www.linkedin.com/in/antonio-ortega-75b0b94/" target="_blank">LinkedIn</a></li>
+    <li><a href="https://dblp.org/pid/o/AntonioOrtega.html" target="_blank">DBLP</a></li>
+  </ul>
+</section>
+
+</div><!-- /page-wrap -->
+
+<footer>
+  <div class="page-wrap">
+    &copy; 2026 Antonio Ortega &mdash; University of Southern California.
+  </div>
+</footer>
+
+<script>
+// Close mobile nav on link click
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+});
+
+// Publication tabs
+function showTab(id, btn) {
+  document.querySelectorAll('.pub-list').forEach(l => l.classList.remove('active'));
+  document.querySelectorAll('.pub-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>
