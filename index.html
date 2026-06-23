@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 <style>
 /* ===== RESET & BASE ===== */
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+*, *::before, *::after { margin: 4px; padding: 4px; box-sizing: border-box; }
 
 :root {
   --usc-red: #990000;
@@ -33,7 +33,7 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.7;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 a { color: var(--usc-red); text-decoration: none; }
@@ -141,7 +141,7 @@ em { font-style: italic; }
 
 /* ===== HERO ===== */
 #hero {
-  padding: 48px 0 40px;
+  padding: 40px 0 40px;
   border-bottom: 1px solid var(--border);
 }
 .hero-layout {
@@ -151,13 +151,13 @@ em { font-style: italic; }
 }
 .hero-photo {
   flex-shrink: 0;
-  width: 160px;
-  height: 160px;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
-  overflow: hidden;
-  border: 3px solid var(--border);
+  overflow: visible;
+  border: 0px solid var(--border);
 }
-.hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+.hero-photo img { width: 100%; height: 100%; object-fit: scale-down; }
 .hero-text h1 {
   font-family: var(--font-serif);
   font-size: 1.9rem;
@@ -261,9 +261,11 @@ em { font-style: italic; }
 .pub-list.active { display: block; }
 
 .pub-item {
-  padding: 12px 0;
-  border-bottom: 1px solid #eeeeee;
+  padding: 14px 0 14px 14px;
+  border-bottom: 1px solid #e0e0e0;
+  border-left: 3px solid #cc000022;
 }
+
 .pub-item:last-child { border-bottom: none; }
 .pub-title { font-weight: 700; color: var(--text); font-size: 0.9rem; margin-bottom: 3px; }
 .pub-authors { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 3px; }
