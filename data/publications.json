@@ -1,0 +1,255 @@
+{
+  "generated": "2026-11-20T21:57:21Z",
+  "source": "OpenAlex",
+  "author_id": "A5040001106",
+  "author_name": "Antonio Ortega",
+  "profile_url": "https://openalex.org/A5040001106",
+  "stats": {
+    "works": 667,
+    "citations": 23958,
+    "h_index": 62,
+    "i10_index": 295
+  },
+  "recent": [
+    {
+      "title": "PolarFlow: Spectral Geometric Flow Matching for Directed Graph Generation via Polar Decomposition",
+      "authors": "Y. Zhao, F. Ji, A. Carballo-Castro, J. Dai, A. Ortega, P. Frossard, W. P. Tay",
+      "venue": "arXiv",
+      "year": 2026,
+      "doi": "https://doi.org/10.48550/arxiv.2610.41471",
+      "type": "preprint"
+    },
+    {
+      "title": "Geometry-Aware Graph Construction Via Adaptive Spectral Bandwidth Control",
+      "authors": "E. Bozkurt, A. Ortega",
+      "venue": "IEEE MLSP",
+      "year": 2026,
+      "doi": "https://doi.org/10.1109/mlsp68619.2026.11772480",
+      "type": "conference-paper"
+    },
+    {
+      "title": "Rate-Distortion Optimization for Ensembles of Non-Reference Metrics",
+      "authors": "X. Xiong, S. Fernández-Menduiña, E. Pavéz, A. Ortega, N. Birkbeck, B. Adsumilli",
+      "venue": "IEEE ICIP",
+      "year": 2026,
+      "doi": "https://doi.org/10.1109/icip61757.2026.11630421",
+      "type": "conference-paper"
+    },
+    {
+      "title": "FASST: Fast Sparsifying Secondary Transform",
+      "authors": "D. Pakiyarajah, S. Fernández-Menduiña, E. Pavez, A. Ortega, D. Mukherjee",
+      "venue": "IEEE ICIP",
+      "year": 2026,
+      "doi": "https://doi.org/10.1109/icip61757.2026.11630485",
+      "type": "conference-paper"
+    },
+    {
+      "title": "Reduced-Complexity Adaptive Loop Filtering via Input-Dependent Graph Filters",
+      "authors": "W. Lu, E. Pavez, A. Ortega, R. I. Chernyak, L. S",
+      "venue": "IEEE ICIP",
+      "year": 2026,
+      "doi": "https://doi.org/10.1109/icip61757.2026.11629908",
+      "type": "conference-paper"
+    },
+    {
+      "title": "Learning Geometry-Consistent Graphs for Multi-Modal Geophysical Data Interpolation",
+      "authors": "K. Arias, P. Goyes-Peñafiel, A. Ortega, H. Arguello",
+      "venue": "IEEE ICIP",
+      "year": 2026,
+      "doi": "https://doi.org/10.1109/icip61757.2026.11630104",
+      "type": "conference-paper"
+    },
+    {
+      "title": "3D Unsupervised Sparse Gravimetry Imaging Guided by a Physics-Consistent Neural Field",
+      "authors": "A. Mantilla-Dulcey, Y. Gharedaghi, D. Quintero, A. Ortega, H. Arguello",
+      "venue": "IEEE ICIP",
+      "year": 2026,
+      "doi": "https://doi.org/10.1109/icip61757.2026.11630192",
+      "type": "conference-paper"
+    },
+    {
+      "title": "Cloud-Robust Spatiotemporal Fusion of Satellite Images: a Constrained Convex Optimization Approach",
+      "authors": "R. Isono, S. Ono, A. Ortega",
+      "venue": "IEEE ICIP",
+      "year": 2026,
+      "doi": "https://doi.org/10.1109/icip61757.2026.11630157",
+      "type": "conference-paper"
+    },
+    {
+      "title": "Lossy compression of weighted graph adjacency matrices by transform coding",
+      "authors": "K. Yanagiya, J. Hara, H. Higashi, Y. Tanaka, A. Ortega",
+      "venue": "arXiv",
+      "year": 2026,
+      "doi": "https://doi.org/10.48550/arxiv.2607.14834",
+      "type": "preprint"
+    },
+    {
+      "title": "Wrapper-Aware Rate-Distortion Optimization in Feature Coding for Machines",
+      "authors": "S. Fernández-Menduiña, H. Choi, F. Racapé, E. Pavez, A. Ortega",
+      "venue": "IEEE ICASSP",
+      "year": 2026,
+      "doi": "https://doi.org/10.1109/icassp55912.2026.11462826",
+      "type": "conference-paper"
+    },
+    {
+      "title": "Digraph Signal Processing via Polar Decomposition",
+      "authors": "F. Ji, A. Ortega",
+      "venue": "IEEE ICASSP",
+      "year": 2026,
+      "doi": "https://doi.org/10.1109/icassp55912.2026.11464495",
+      "type": "conference-paper"
+    },
+    {
+      "title": "L2G-Net: Local to Global Spectral Graph Neural Networks via Cauchy Factorizations",
+      "authors": "S. Fernández-Menduiña, E. Pavez, A. Ortega",
+      "venue": "arXiv",
+      "year": 2026,
+      "doi": "https://doi.org/10.48550/arxiv.2602.18837",
+      "type": "preprint"
+    },
+    {
+      "title": "Uncertainty Principle for Vertex-Time Graph Signal Processing",
+      "authors": "Y. Zhao, X. Jian, F. Ji, W. P. Tay, A. Ortega",
+      "venue": "arXiv",
+      "year": 2026,
+      "doi": "https://doi.org/10.48550/arxiv.2602.04084",
+      "type": "preprint"
+    },
+    {
+      "title": "Image Coding for Machines via Feature-Preserving Rate-Distortion Optimization",
+      "authors": "S. Fernández-Menduiña, E. Pavéz, A. Ortega",
+      "venue": "IEEE Trans. Multimedia",
+      "year": 2026,
+      "doi": "https://doi.org/10.1109/tmm.2026.3664944",
+      "type": "article"
+    },
+    {
+      "title": "Time-Varying Graph Learning With Constraints on Graph Temporal Variation",
+      "authors": "H. Yokota, K. Yamada, Y. Tanaka, A. Ortega",
+      "venue": "IEEE Trans. Signal Processing",
+      "year": 2026,
+      "doi": "https://doi.org/10.1109/tsp.2026.3712068",
+      "type": "article"
+    },
+    {
+      "title": "LiVo: Toward Bandwidth-adaptive Fully-Immersive Volumetric Video Conferencing",
+      "authors": "R. Ghosh, C. Suyong Shin, L. Zhang, M. Ye, T. Jin, H. V. Madhyastha, R. Netravali, A. Ortega, et al.",
+      "venue": "ACM CoNEXT",
+      "year": 2025,
+      "doi": "https://doi.org/10.1145/3768981",
+      "type": "article"
+    },
+    {
+      "title": "Avoiding Quality Saturation in UGC Compression Using Denoised References",
+      "authors": "X. Xiong, S. Fernández-Menduiña, E. Pavez, A. Ortega, N. Birkbeck, B. Adsumilli",
+      "venue": "arXiv",
+      "year": 2025,
+      "doi": "https://doi.org/10.48550/arxiv.2511.16876",
+      "type": "preprint"
+    },
+    {
+      "title": "Joint Optimization of Primary and Secondary Transforms Using Rate-Distortion Optimized Transform Design",
+      "authors": "D. Pakiyarajah, E. Pavéz, A. Ortega, D. Mukherjee, O. G. Guleryuz, K. Lu, K. Koratti Sivakumar",
+      "venue": "IEEE ICIP",
+      "year": 2025,
+      "doi": "https://doi.org/10.1109/icip55913.2025.11084571",
+      "type": "conference-paper"
+    },
+    {
+      "title": "Adaptive Voxelization for Transform Coding of 3D Gaussian Splatting Data",
+      "authors": "C. Wang, S. Nelamangala Sridhara, E. Pavéz, A. Ortega, C. Chang",
+      "venue": "IEEE ICIP",
+      "year": 2025,
+      "doi": "https://doi.org/10.1109/icip55913.2025.11084522",
+      "type": "conference-paper"
+    },
+    {
+      "title": "Rate-Distortion Optimization with Non-Reference Metrics for UGC Compression",
+      "authors": "S. Fernández-Menduiña, X. Xiong, E. Pavéz, A. Ortega, N. Birkbeck, B. Adsumilli",
+      "venue": "IEEE ICIP",
+      "year": 2025,
+      "doi": "https://doi.org/10.1109/icip55913.2025.11084420",
+      "type": "conference-paper"
+    },
+    {
+      "title": "Sparse Interpretable Deep Learning with LIES Networks for Symbolic Regression",
+      "authors": "M. Montazerin, M. A. Aawar, A. Ortega, A. Srivastava",
+      "venue": "arXiv",
+      "year": 2025,
+      "doi": "https://doi.org/10.48550/arxiv.2506.08267",
+      "type": "preprint"
+    },
+    {
+      "title": "No-Reference Point Cloud Quality Assessment Based on Graph Signal Variation",
+      "authors": "R. Watanabe, K. Nonaka, E. Pavéz, T. Kobayashi, A. Ortega",
+      "venue": "IEEE ICASSP",
+      "year": 2025,
+      "doi": "https://doi.org/10.1109/icassp49660.2025.10888315",
+      "type": "conference-paper"
+    },
+    {
+      "title": "Fast DCT+: A Family of Fast Transforms Based on Rank-One Updates of the Path Graph",
+      "authors": "S. Fernández-Menduiña, E. Pavéz, A. Ortega",
+      "venue": "IEEE ICASSP",
+      "year": 2025,
+      "doi": "https://doi.org/10.1109/icassp49660.2025.10889896",
+      "type": "conference-paper"
+    },
+    {
+      "title": "Graph-based Signal Sampling with Adaptive Subspace Reconstruction for Spatially-irregular Sensor Data",
+      "authors": "D. Pakiyarajah, E. Pavéz, A. Ortega",
+      "venue": "IEEE ICASSP",
+      "year": 2025,
+      "doi": "https://doi.org/10.1109/icassp49660.2025.10890658",
+      "type": "conference-paper"
+    },
+    {
+      "title": "Generalized Graph Signal Reconstruction via the Uncertainty Principle",
+      "authors": "Y. Zhao, X. Jian, F. Quan Ji, W. Peng Tay, A. Ortega",
+      "venue": "IEEE ICASSP",
+      "year": 2025,
+      "doi": "https://doi.org/10.1109/icassp49660.2025.10889406",
+      "type": "conference-paper"
+    },
+    {
+      "title": "AutoML for multi-class anomaly compensation of sensor drift",
+      "authors": "M. Schaller, M. Kruse, A. Ortega, M. Lindauer, B. Rosenhahn",
+      "venue": "Measurement",
+      "year": 2025,
+      "doi": "https://doi.org/10.1016/j.measurement.2025.117097",
+      "type": "article"
+    },
+    {
+      "title": "Full reference point cloud quality assessment using support vector regression",
+      "authors": "R. Watanabe, S. Nelamangala Sridhara, H. Hong, E. Pavéz, K. Nonaka, T. Kobayashi, A. Ortega",
+      "venue": "Signal Process.: Image Comm.",
+      "year": 2024,
+      "doi": "https://doi.org/10.1016/j.image.2024.117239",
+      "type": "article"
+    },
+    {
+      "title": "Towards Joint Graph Learning and Sampling Set Selection from Data",
+      "authors": "S. Nelamangala Sridhara, E. Pavéz, A. Ortega",
+      "venue": "Asilomar (ACSSC)",
+      "year": 2024,
+      "doi": "https://doi.org/10.1109/ieeeconf60004.2024.10942625",
+      "type": "conference-paper"
+    },
+    {
+      "title": "Feature-Preserving Rate-Distortion Optimization in Image Coding for Machines",
+      "authors": "S. Fernández-Menduiña, E. Pavéz, A. Ortega",
+      "venue": "IEEE MMSP",
+      "year": 2024,
+      "doi": "https://doi.org/10.1109/mmsp61759.2024.10743266",
+      "type": "conference-paper"
+    },
+    {
+      "title": "Color-Guided Flying Pixel Correction in Depth Images",
+      "authors": "E. Vasudevan, S. Nelamangala Sridhara, E. Pavéz, A. Ortega, R. Singh, S. Kalluri",
+      "venue": "IEEE MMSP",
+      "year": 2024,
+      "doi": "https://doi.org/10.1109/mmsp61759.2024.10743790",
+      "type": "conference-paper"
+    }
+  ]
+}
